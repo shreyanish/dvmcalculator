@@ -7,7 +7,7 @@
     android:backgroundTint="#212429">
 
     <FrameLayout
-        android:id="@+id/displayArea"
+        android:id="@+id/FrameLayout"
         android:layout_width="415dp"
         android:layout_height="255dp"
         android:background="#2b343a"
@@ -16,12 +16,12 @@
         app:layout_constraintTop_toTopOf="parent" >
 
         <TextView
-            android:id="@+id/text_view_id"
+            android:id="@+id/displayArea"
             android:layout_width="413dp"
             android:layout_height="252dp"
             android:text=""
             android:textColor="#d3e5f5"
-            android:textSize="40dp"
+            android:textSize="40sp"
             android:textStyle="bold" />
 
     </FrameLayout>
@@ -36,7 +36,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/displayArea">
+        app:layout_constraintTop_toBottomOf="@+id/FrameLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,9 +54,9 @@
                 android:layout_marginEnd="4dp"
                 android:layout_weight="15"
                 android:backgroundTint="#4c4162"
-                android:text="Made with ❤ for dvm️ "
+                android:text="@string/dvmtext"
                 android:textColor="#eadeff"
-                android:textSize="10dp"
+                android:textSize="12sp"
                 tools:ignore="NestedWeights" />
 
             <Button
