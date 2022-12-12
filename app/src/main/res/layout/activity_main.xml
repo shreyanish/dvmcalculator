@@ -11,6 +11,9 @@
         android:layout_width="415dp"
         android:layout_height="255dp"
         android:background="#2b343a"
+        android:text=""
+        android:textColor="#eadeff"
+        android:textSize = "30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
