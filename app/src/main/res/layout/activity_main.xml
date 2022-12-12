@@ -11,14 +11,23 @@
         android:layout_width="415dp"
         android:layout_height="255dp"
         android:background="#2b343a"
-        android:text=""
-        android:textColor="#eadeff"
-        android:textSize = "30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <TextView
+            android:id="@+id/text_view_id"
+            android:layout_width="413dp"
+            android:layout_height="252dp"
+            android:text=""
+            android:textColor="#d3e5f5"
+            android:textSize="40dp"
+            android:textStyle="bold" />
+
+    </FrameLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="415dp"
         android:layout_height="481dp"
         android:background="#1a1d1f"
@@ -52,6 +61,7 @@
 
             <Button
                 android:id="@+id/allclear"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="4dp"
@@ -59,11 +69,11 @@
                 android:layout_weight="1"
                 android:backgroundTint="#374b57"
                 android:text="@string/ac"
-                android:textColor="#d3e5f5"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textColor="#d3e5f5" />
 
             <Button
                 android:id="@+id/divide"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="4dp"
@@ -72,7 +82,6 @@
                 android:backgroundTint="#374b57"
                 android:text="@string/div"
                 android:textColor="#d3e5f5"
-                style="?android:attr/buttonBarButtonStyle"
                 tools:ignore="HardcodedText" />
 
         </LinearLayout>
@@ -87,6 +96,7 @@
 
             <Button
                 android:id="@+id/seven"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="4dp"
@@ -94,11 +104,11 @@
                 android:backgroundTint="#212429"
                 android:text="@string/_7"
                 android:textColor="#d3e5f5"
-                style="?android:attr/buttonBarButtonStyle"
                 tools:ignore="NestedWeights" />
 
             <Button
                 android:id="@+id/eight"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="4dp"
@@ -106,11 +116,11 @@
                 android:layout_weight="1"
                 android:backgroundTint="#212429"
                 android:text="@string/_8"
-                android:textColor="#d3e5f5"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textColor="#d3e5f5" />
 
             <Button
                 android:id="@+id/nine"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="4dp"
@@ -118,20 +128,19 @@
                 android:layout_weight="1"
                 android:backgroundTint="#212429"
                 android:text="@string/_9"
-                android:textColor="#d3e5f5"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textColor="#d3e5f5" />
 
             <Button
                 android:id="@+id/multiply"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
                 android:backgroundTint="#374b57"
-                android:textColor="#d3e5f5"
                 android:text="@string/x"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textColor="#d3e5f5" />
 
         </LinearLayout>
 
@@ -145,18 +154,19 @@
 
             <Button
                 android:id="@+id/four"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
                 android:backgroundTint="#212429"
                 android:text="@string/_4"
-                style="?android:attr/buttonBarButtonStyle"
                 android:textColor="#d3e5f5"
                 tools:ignore="NestedWeights" />
 
             <Button
                 android:id="@+id/five"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="4dp"
@@ -164,11 +174,11 @@
                 android:layout_weight="1"
                 android:backgroundTint="#212429"
                 android:text="@string/_5"
-                android:textColor="#d3e5f5"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textColor="#d3e5f5" />
 
             <Button
                 android:id="@+id/six"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="4dp"
@@ -176,11 +186,11 @@
                 android:layout_weight="1"
                 android:backgroundTint="#212429"
                 android:text="@string/_6"
-                android:textColor="#d3e5f5"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textColor="#d3e5f5" />
 
             <Button
                 android:id="@+id/subtract"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="4dp"
@@ -188,8 +198,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#374b57"
                 android:text="@string/hyphen"
-                android:textColor="#d3e5f5"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textColor="#d3e5f5" />
 
         </LinearLayout>
 
@@ -203,6 +212,7 @@
 
             <Button
                 android:id="@+id/three"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="4dp"
@@ -210,11 +220,11 @@
                 android:backgroundTint="#212429"
                 android:text="@string/_3"
                 android:textColor="#d3e5f5"
-                style="?android:attr/buttonBarButtonStyle"
                 tools:ignore="NestedWeights" />
 
             <Button
                 android:id="@+id/two"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="4dp"
@@ -222,11 +232,11 @@
                 android:layout_weight="1"
                 android:backgroundTint="#212429"
                 android:text="@string/_2"
-                android:textColor="#d3e5f5"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textColor="#d3e5f5" />
 
             <Button
                 android:id="@+id/one"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="4dp"
@@ -234,11 +244,11 @@
                 android:layout_weight="1"
                 android:backgroundTint="#212429"
                 android:text="@string/_1"
-                android:textColor="#d3e5f5"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textColor="#d3e5f5" />
 
             <Button
                 android:id="@+id/add"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="4dp"
@@ -246,8 +256,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#374b57"
                 android:text="@string/add"
-                android:textColor="#d3e5f5"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textColor="#d3e5f5" />
 
         </LinearLayout>
 
@@ -261,6 +270,7 @@
 
             <Button
                 android:id="@+id/zero"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="4dp"
@@ -268,11 +278,11 @@
                 android:backgroundTint="#212429"
                 android:text="@string/_0"
                 android:textColor="#d3e5f5"
-                style="?android:attr/buttonBarButtonStyle"
                 tools:ignore="NestedWeights" />
 
             <Button
                 android:id="@+id/decimal"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="4dp"
@@ -280,11 +290,11 @@
                 android:layout_weight="1"
                 android:backgroundTint="#212429"
                 android:text="@string/decimal"
-                android:textColor="#d3e5f5"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textColor="#d3e5f5" />
 
             <Button
                 android:id="@+id/delete"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="4dp"
@@ -292,11 +302,11 @@
                 android:layout_weight="1"
                 android:backgroundTint="#212429"
                 android:text="@string/del"
-                android:textColor="#d3e5f5"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textColor="#d3e5f5" />
 
             <Button
                 android:id="@+id/equalto"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="4dp"
@@ -304,8 +314,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#004b6f"
                 android:text="@string/equalto"
-                android:textColor="#d3e5f5"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textColor="#d3e5f5" />
 
         </LinearLayout>
 
