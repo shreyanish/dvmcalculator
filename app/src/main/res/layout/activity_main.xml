@@ -6,25 +6,20 @@
     android:layout_height="match_parent"
     android:backgroundTint="#212429">
 
-    <FrameLayout
-        android:id="@+id/FrameLayout"
+
+    <TextView
+        android:id="@+id/displayArea"
         android:layout_width="415dp"
         android:layout_height="255dp"
         android:background="#2b343a"
+        android:text=""
+        android:textColor="#d3e5f5"
+        android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/displayArea"
-            android:layout_width="413dp"
-            android:layout_height="252dp"
-            android:text=""
-            android:textColor="#d3e5f5"
-            android:textSize="40sp"
-            android:textStyle="bold" />
-
-    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout"

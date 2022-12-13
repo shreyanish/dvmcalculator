@@ -18,11 +18,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
         setContentView(R.layout.activity_main)
+        displayArea = findViewById(R.id.displayArea)
         initializeComponents()
     }
 
     private fun initializeComponents() {
-        displayArea = findViewById(R.id.displayArea)
         val buttonEquals: Button = findViewById(R.id.equalto)
         val buttonClear: Button = findViewById(R.id.allclear)
         val buttonDelete: Button = findViewById(R.id.delete)
