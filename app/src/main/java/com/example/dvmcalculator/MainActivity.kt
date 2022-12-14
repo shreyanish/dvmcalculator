@@ -1,77 +1,100 @@
 package com.example.dvmcalculator
-
-import android.annotation.SuppressLint
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.widget.Button
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
+import java.lang.StringBuilder
 
 class MainActivity : AppCompatActivity() {
     private var strNumber = java.lang.StringBuilder()
     private lateinit var displayArea: TextView
     private lateinit var numberButtons: Array<Button>
-    private lateinit var operatorButtons : Array<Button>
+    private lateinit var button9: Button
+    private lateinit var button8: Button
+    private lateinit var button7: Button
+    private lateinit var button6: Button
+    private lateinit var button5: Button
+    private lateinit var button4: Button
+    private lateinit var button3: Button
+    private lateinit var button2: Button
+    private lateinit var button1: Button
+    private lateinit var button0: Button
+    private lateinit var buttonAdd: Button
+    private lateinit var buttonSub: Button
+    private lateinit var buttonMul: Button
+    private lateinit var buttonDiv: Button
+    private lateinit var operatorButtons: Array<Button>
+    private lateinit var buttonEquals: Button
+    private lateinit var buttonClear: Button
+    private lateinit var buttonDel: Button
+    private lateinit var buttonDecimal: Button
     private var operator : Operator = Operator.NONE
     private var isOperatorClicked: Boolean = false
     private var operand1: Double = 0.0
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        displayArea = findViewById(R.id.displayArea)
         initializeComponents()
     }
-
     private fun initializeComponents() {
-        val buttonEquals: Button = findViewById(R.id.equalto)
-        val buttonClear: Button = findViewById(R.id.allclear)
-        val buttonDelete: Button = findViewById(R.id.delete)
-        val buttonDecimal: Button = findViewById(R.id.decimal)
-        val button9: Button = findViewById(R.id.nine)
-        val button8: Button = findViewById(R.id.eight)
-        val button7: Button = findViewById(R.id.seven)
-        val button6: Button = findViewById(R.id.six)
-        val button5: Button = findViewById(R.id.five)
-        val button4: Button = findViewById(R.id.four)
-        val button3: Button = findViewById(R.id.three)
-        val button2: Button = findViewById(R.id.two)
-        val button1: Button = findViewById(R.id.one)
-        val button0: Button = findViewById(R.id.zero)
-        val buttonAdd: Button = findViewById(R.id.add)
-        val buttonSubtract: Button = findViewById(R.id.subtract)
-        val buttonMultiply: Button = findViewById(R.id.multiply)
-        val buttonDivide: Button = findViewById(R.id.divide)
-        numberButtons = arrayOf(button0, button1, button2, button3, button4, button5, button6, button7, button8, button9)
+        displayArea = findViewById(R.id.displayArea)
+        button9 = findViewById(R.id.nine)
+        button8 = findViewById(R.id.eight)
+        button7 = findViewById(R.id.seven)
+        button6 = findViewById(R.id.six)
+        button5 = findViewById(R.id.five)
+        button4 = findViewById(R.id.four)
+        button3 = findViewById(R.id.three)
+
+        button2 = findViewById(R.id.two)
+        button1 = findViewById(R.id.one)
+        button0 = findViewById(R.id.zero)
+        buttonAdd = findViewById(R.id.add)
+        buttonSub = findViewById(R.id.subtract)
+        buttonMul = findViewById(R.id.multiply)
+        buttonDiv = findViewById(R.id.divide)
+        numberButtons = arrayOf(button0, button1, button2, button3,
+
+            button4, button5, button6, button7, button8, button9)
+
         for (i in numberButtons) {
             i.setOnClickListener { numberButtonClicked(i) }
+
         }
-        operatorButtons = arrayOf(buttonAdd, buttonSubtract, buttonMultiply, buttonDivide)
+        operatorButtons = arrayOf(buttonAdd, buttonSub, buttonMul,
+
+            buttonDiv)
+
         for (i in operatorButtons) {
             i.setOnClickListener { operatorButtonClicked(i) }
+
         }
-
-        buttonEquals.setOnClickListener { buttonEqualClick() }
-        buttonClear.setOnClickListener { buttonClearClick() }
-        buttonDelete.setOnClickListener { buttonDeleteClick() }
-        buttonDecimal.setOnClickListener { buttonDecimalClick() }
+        buttonEquals = findViewById(R.id.equalto)
+        buttonEquals.setOnClickListener { buttonEqual() }
+        buttonClear = findViewById(R.id.allclear)
+        buttonClear.setOnClickListener { buttonClearClicked() }
+        buttonDel = findViewById(R.id.delete)
+        buttonDel.setOnClickListener { buttonDelClicked() }
 
     }
 
-    private fun buttonDecimalClick() {
-        strNumber.append(".")
-        updateDisplay()
-    }
-
-    private fun buttonDeleteClick() {
-        strNumber.dropLast(1)
-        updateDisplay()
-    }
-
-    private fun buttonClearClick() {
+    private fun buttonDelClicked() {
+        lateinit var delstrNumber: CharSequence
+        if (strNumber.length > 0) {
+            delstrNumber = strNumber.dropLast(1)
+        }
         strNumber.clear()
+        strNumber.append(delstrNumber)
+        displayArea.text = strNumber
     }
+    private fun buttonClearClicked() {
+        strNumber.clear()
+        displayArea.text = strNumber
+        isOperatorClicked = false
+        operator = Operator.NONE
 
-    private fun buttonEqualClick() {
+    }
+    private fun buttonEqual() {
         val operand2 = strNumber.toString().toDouble()
         val result: Double = when(operator) {
             Operator.ADD -> operand1 + operand2
@@ -82,25 +105,11 @@ class MainActivity : AppCompatActivity() {
         }
         strNumber.clear()
         strNumber.append(result.toString())
-        updateDisplay()
+        displayArea.text = strNumber
         isOperatorClicked = true
     }
-
-    @SuppressLint("SetTextI18n")
-    private fun updateDisplay() {
-        try {
-            val textValue = strNumber.toString().toDouble()
-            displayArea.text = textValue.toString()
-        }
-        catch (e:java.lang.IllegalArgumentException) {
-            strNumber.clear()
-            displayArea.text = "MAX INTEGER LIMIT REACHED"
-        }
-
-    }
-
-    private fun operatorButtonClicked(btn: Button) {
-        operator = when (btn.text) {
+    private fun operatorButtonClicked(i: Button) {
+        operator = when(i.text) {
             "+" -> Operator.ADD
             "-" -> Operator.SUB
             "X" -> Operator.MUL
@@ -109,16 +118,15 @@ class MainActivity : AppCompatActivity() {
         }
         isOperatorClicked = true
     }
-
-    private fun numberButtonClicked(btn: Button) {
+    enum class Operator {ADD, SUB, MUL, DIV, NONE}
+    private fun numberButtonClicked(i: Button) {
         if (isOperatorClicked) {
             operand1 = strNumber.toString().toDouble()
             strNumber.clear()
             isOperatorClicked = false
         }
-        strNumber.append(btn.text)
-        updateDisplay()
+        strNumber.append(i.text)
+        displayArea.text = strNumber
     }
-}
 
-enum class Operator {ADD, SUB, MUL, DIV, NONE}
+}
